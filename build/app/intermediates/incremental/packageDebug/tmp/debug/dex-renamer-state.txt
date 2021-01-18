@@ -1,0 +1,4 @@
+#Fri Jan 15 00:30:45 CET 2021
+base.0=C\:\\Users\\dodos\\DEV\\eko-scan\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
