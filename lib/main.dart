@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'scanner.dart';
 
 
 const Color EKO_Green = Color.fromARGB(255, 0, 205, 130);
@@ -56,7 +57,7 @@ class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin
             child: Text("History"),
           ),
           Center(
-            child: Text('Scan'),
+            child: BarcodeScan(),
           ),
           Center(
             child: Text("Map"),
