@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 
-
-
 class BarcodeScan extends StatefulWidget
 {
   BarcodeScan({Key key}) : super(key: key);
@@ -14,7 +12,7 @@ class BarcodeScan extends StatefulWidget
 
 class BarcodeState extends State<BarcodeScan>
 {
-  String barcode_result;
+  String barcodeResult;
 
 
   @override
