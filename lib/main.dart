@@ -9,6 +9,7 @@ void main() => runApp(Display());
 class Display extends StatelessWidget {
   final Color ekoGreen = Color.fromARGB(255, 0, 205, 130);
   final Color ekoDarkGreen = Color.fromARGB(255, 0, 151, 95);
+  final Color ekoDarkGrey = Colors.blueGrey[700];
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class Display extends StatelessWidget {
         ),
 
         // Widget to change to perform tests
-        home: EkoScan());
+        home: FicheProduit());
   }
 }
 

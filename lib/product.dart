@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+
 
 class Product{
 
@@ -23,10 +23,6 @@ class Product{
     this.fairtrade = fairtrade;
     this.pic = pic;
     this.score = score;
-  }
-
-  UpdateProduct(){
-
   }
 
 }
