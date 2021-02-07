@@ -109,7 +109,9 @@ class _FicheProduitState extends State<FicheProduit> {
                       )),
                 ],
               ),
-              SizedBox(height: 15.0,),
+              SizedBox(
+                height: 15.0,
+              ),
               RaisedButton(
                   onPressed: () {
                     setState(() {
@@ -117,9 +119,11 @@ class _FicheProduitState extends State<FicheProduit> {
                     });
                   },
                   shape: StadiumBorder(),
-                  child:
-                  Icon(Icons.favorite_border_rounded, color: Colors.pink[700], size: 30,)
-              ),
+                  child: Icon(
+                    Icons.favorite_border_rounded,
+                    color: Colors.pink[700],
+                    size: 30,
+                  )),
               Divider(
                 height: 50.0,
                 color: Colors.blueGrey,
@@ -139,8 +143,7 @@ class _FicheProduitState extends State<FicheProduit> {
                   width: 10.0,
                 ),
                 Text('Marque : ${prod.brand}',
-                    maxLines: 3,
-                    style: Theme.of(context).textTheme.bodyText1),
+                    maxLines: 3, style: Theme.of(context).textTheme.bodyText1),
               ]),
               SizedBox(height: 15.0),
               Row(children: <Widget>[
@@ -150,8 +153,7 @@ class _FicheProduitState extends State<FicheProduit> {
                 ),
                 SizedBox(width: 10.0),
                 Text('${prod.fairtrade}',
-                    maxLines: 3,
-                    style: Theme.of(context).textTheme.bodyText1),
+                    maxLines: 3, style: Theme.of(context).textTheme.bodyText1),
               ]),
               SizedBox(
                 height: 15.0,
@@ -181,10 +183,8 @@ class _FicheProduitState extends State<FicheProduit> {
                   width: 10.0,
                 ),
                 Text('Emballage : ${prod.packaging}',
-                    maxLines: 3,
-                    style: Theme.of(context).textTheme.bodyText1)
-              ]
-              ),
+                    maxLines: 3, style: Theme.of(context).textTheme.bodyText1)
+              ]),
             ],
           )),
     );
