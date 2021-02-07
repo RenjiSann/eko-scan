@@ -118,6 +118,7 @@ class _FicheProduitState extends State<FicheProduit> {
                       onPressed: () {
                         setState(() {
                           prod.product += " is liked";
+                          prod.fairtrade += "is not is not";
                         });
                       },
                       shape: StadiumBorder(),
