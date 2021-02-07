@@ -61,7 +61,10 @@ class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin {
         controller: _tabController,
         children: <Widget>[
           Center(
-            child: Text("History"),
+            child: Container(
+              child: Text("History"),
+              color: Theme.of(context).backgroundColor,
+            ),
           ),
           Center(
             child: Scanner(),
