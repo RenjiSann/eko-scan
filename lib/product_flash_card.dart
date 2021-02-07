@@ -83,6 +83,7 @@ class _FicheProduitState extends State<FicheProduit> {
                 SizedBox(width: 10.0),
                 Text(
                   'EKO-SCORE : ${prod.score}/10',
+                  maxLines: 3,
                   style: TextStyle(
                       color: Colors.greenAccent[700],
                       letterSpacing: 2.0,
@@ -101,6 +102,7 @@ class _FicheProduitState extends State<FicheProduit> {
                     width: 10.0,
                   ),
                   Text('${prod.bin}',
+                      maxLines: 3,
                       style: TextStyle(
                         color: Colors.greenAccent[700],
                         letterSpacing: 2.0,
@@ -137,6 +139,7 @@ class _FicheProduitState extends State<FicheProduit> {
                   width: 10.0,
                 ),
                 Text('Marque : ${prod.brand}',
+                    maxLines: 3,
                     style: Theme.of(context).textTheme.bodyText1),
               ]),
               SizedBox(height: 15.0),
@@ -147,6 +150,7 @@ class _FicheProduitState extends State<FicheProduit> {
                 ),
                 SizedBox(width: 10.0),
                 Text('${prod.fairtrade}',
+                    maxLines: 3,
                     style: Theme.of(context).textTheme.bodyText1),
               ]),
               SizedBox(
@@ -163,6 +167,7 @@ class _FicheProduitState extends State<FicheProduit> {
                   ),
                   Text(
                     'Origine : ${prod.origin}',
+                    maxLines: 3,
                     style: Theme.of(context).textTheme.bodyText1,
                   )
                 ],
@@ -176,6 +181,7 @@ class _FicheProduitState extends State<FicheProduit> {
                   width: 10.0,
                 ),
                 Text('Emballage : ${prod.packaging}',
+                    maxLines: 3,
                     style: Theme.of(context).textTheme.bodyText1)
               ]
               ),
