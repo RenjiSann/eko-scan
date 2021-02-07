@@ -26,17 +26,17 @@ class Display extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
           iconTheme: IconThemeData(color: Colors.blueGrey[700]),
           textTheme: TextTheme(
-            bodyText1: TextStyle(
-                color: Colors.blueGrey,
+              bodyText1: TextStyle(
+                  color: Colors.blueGrey,
+                  letterSpacing: 2.0,
+                  fontWeight: FontWeight.normal),
+              headline1: TextStyle(
+                color: Colors.blueGrey[700],
                 letterSpacing: 2.0,
-                fontWeight: FontWeight.normal),
-            headline1: TextStyle(
-              color: Colors.blueGrey[700],
-              letterSpacing: 2.0,
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+              ),
+              button: TextStyle(color: Colors.white)),
         ),
         darkTheme: ThemeData(
           primaryColor: ekoGreen,
@@ -44,17 +44,17 @@ class Display extends StatelessWidget {
           scaffoldBackgroundColor: Color.fromARGB(255, 32, 32, 32),
           iconTheme: IconThemeData(color: Colors.white),
           textTheme: TextTheme(
-            bodyText1: TextStyle(
+              bodyText1: TextStyle(
+                  color: Colors.white,
+                  letterSpacing: 2.0,
+                  fontWeight: FontWeight.normal),
+              headline1: TextStyle(
                 color: Colors.white,
                 letterSpacing: 2.0,
-                fontWeight: FontWeight.normal),
-            headline1: TextStyle(
-              color: Colors.white,
-              letterSpacing: 2.0,
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+              ),
+              button: TextStyle(color: Colors.black)),
         ),
 
         // Widget to change to perform tests
@@ -113,19 +113,28 @@ class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin {
                   children: [
                     Icon(
                       Icons.bar_chart,
+                      color: Theme.of(context).textTheme.button.color,
                     ),
-                    Text("History")
+                    Text("History", style: Theme.of(context).textTheme.button)
                   ],
                 ),
               ),
               Tab(
                 child: Column(
-                  children: [Icon(Icons.aspect_ratio), Text("Scan")],
+                  children: [
+                    Icon(Icons.aspect_ratio,
+                        color: Theme.of(context).textTheme.button.color),
+                    Text("Scan", style: Theme.of(context).textTheme.button)
+                  ],
                 ),
               ),
               Tab(
                 child: Column(
-                  children: [Icon(Icons.article_outlined), Text("Memo")],
+                  children: [
+                    Icon(Icons.article_outlined,
+                        color: Theme.of(context).textTheme.button.color),
+                    Text("Memo", style: Theme.of(context).textTheme.button)
+                  ],
                 ),
               ),
             ],

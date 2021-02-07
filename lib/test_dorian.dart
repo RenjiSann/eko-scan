@@ -20,8 +20,8 @@ class _ScannerState extends State<Scanner> {
       body: Center(
         child: Column(
           children: [
-            Text("Scan Result"),
-            Text('$barcodeData'),
+            Text("Scan Result", style: Theme.of(context).textTheme.headline1),
+            Text('$barcodeData', style: Theme.of(context).textTheme.bodyText1),
             RaisedButton(
               onPressed: scanBarcode,
               shape: StadiumBorder(),

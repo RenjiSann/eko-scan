@@ -47,7 +47,7 @@ class _FicheProduitState extends State<FicheProduit> {
         },
         child: Icon(
           Icons.info_outline_rounded,
-          color: Theme.of(context).iconTheme.color,
+          color: Theme.of(context).textTheme.button.color,
           size: 40.0,
         ),
         backgroundColor: Theme.of(context).primaryColor,
