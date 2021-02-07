@@ -21,15 +21,35 @@ class Display extends StatelessWidget {
           primaryColor: ekoGreen,
           accentColor: ekoDarkGreen,
           backgroundColor: Color.fromARGB(255, 200, 200, 200),
+          scaffoldBackgroundColor: Color.fromARGB(255, 200, 200, 200),
+          textTheme: TextTheme(
+            bodyText1: TextStyle(color: Colors.blueGrey, letterSpacing: 2.0),
+            headline1: TextStyle(
+              color: Colors.blueGrey[700],
+              letterSpacing: 2.0,
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
         darkTheme: ThemeData(
           primaryColor: ekoGreen,
           accentColor: ekoDarkGreen,
           backgroundColor: Color.fromARGB(255, 88, 88, 88),
+          scaffoldBackgroundColor: Color.fromARGB(255, 88, 88, 88),
+          textTheme: TextTheme(
+            bodyText1: TextStyle(color: Colors.white, letterSpacing: 2.0),
+            headline1: TextStyle(
+              color: Colors.white,
+              letterSpacing: 2.0,
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
 
         // Widget to change to perform tests
-        home: FicheProduit());
+        home: EkoScan());
   }
 }
 
@@ -62,16 +82,13 @@ class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin {
         controller: _tabController,
         children: <Widget>[
           Center(
-            child: Container(
-              child: Text("History"),
-              color: Theme.of(context).backgroundColor,
-            ),
+            child: FicheProduit(),
           ),
           Center(
             child: Scanner(),
           ),
           Center(
-            child: Text("Map"),
+            child: FicheProduit(),
           )
         ],
       ),
@@ -84,7 +101,12 @@ class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin {
             tabs: <Widget>[
               Tab(
                 child: Column(
-                  children: [Icon(Icons.bar_chart), Text("History")],
+                  children: [
+                    Icon(
+                      Icons.bar_chart,
+                    ),
+                    Text("History")
+                  ],
                 ),
               ),
               Tab(
@@ -94,7 +116,7 @@ class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin {
               ),
               Tab(
                 child: Column(
-                  children: [Icon(Icons.map), Text("Map")],
+                  children: [Icon(Icons.article_outlined), Text("Memo")],
                 ),
               ),
             ],

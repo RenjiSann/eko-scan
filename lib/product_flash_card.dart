@@ -111,12 +111,7 @@ class _FicheProduitState extends State<FicheProduit> {
               Divider(height: 50.0, color: Colors.blueGrey),
               Text(
                 'Informations',
-                style: TextStyle(
-                  color: Colors.blueGrey[700],
-                  letterSpacing: 2.0,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.headline1,
               ),
               SizedBox(height: 20.0),
               Row(children: [
@@ -158,9 +153,10 @@ class _FicheProduitState extends State<FicheProduit> {
                   SizedBox(
                     width: 10.0,
                   ),
-                  Text('Origine : ${prod.origin}',
-                      style:
-                          TextStyle(color: Colors.blueGrey, letterSpacing: 2.0))
+                  Text(
+                    'Origine : ${prod.origin}',
+                    style: Theme.of(context).textTheme.bodyText1,
+                  )
                 ],
               ),
               SizedBox(
@@ -172,8 +168,7 @@ class _FicheProduitState extends State<FicheProduit> {
                   width: 10.0,
                 ),
                 Text('Emballage : ${prod.packaging}',
-                    style:
-                        TextStyle(color: Colors.blueGrey, letterSpacing: 2.0))
+                    style: Theme.of(context).textTheme.bodyText1)
               ])
             ],
           )),
