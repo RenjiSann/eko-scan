@@ -1,13 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'scanner.dart';
+import 'product_flash_card.dart';
 
 
 const Color EKO_Green = Color.fromARGB(255, 0, 205, 130);
 const Color EKO_DarkGreen = Color.fromARGB(255, 0, 151, 95);
 
-void main() => runApp(Display());
+//TO TEST MAIN APP
+//void main() => runApp(Display());
 
+//TO TEST PRODUCT FLASH CARD
+void main() => runApp(MaterialApp(
+    home: FicheProduit()
+));
 
 class Display extends StatelessWidget
 {
