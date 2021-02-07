@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'product_flash_card.dart';
+import 'memo.dart';
 import 'test_dorian.dart';
 
 void main() => runApp(Display());
@@ -20,10 +21,15 @@ class Display extends StatelessWidget {
         theme: ThemeData(
           primaryColor: ekoGreen,
           accentColor: ekoDarkGreen,
-          backgroundColor: Color.fromARGB(255, 200, 200, 200),
-          scaffoldBackgroundColor: Color.fromARGB(255, 200, 200, 200),
+          //backgroundColor: Color.fromARGB(255, 200, 200, 200),
+          //scaffoldBackgroundColor: Color.fromARGB(255, 200, 200, 200),
+          scaffoldBackgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.blueGrey[700]),
           textTheme: TextTheme(
-            bodyText1: TextStyle(color: Colors.blueGrey, letterSpacing: 2.0),
+            bodyText1: TextStyle(
+                color: Colors.blueGrey,
+                letterSpacing: 2.0,
+                fontWeight: FontWeight.normal),
             headline1: TextStyle(
               color: Colors.blueGrey[700],
               letterSpacing: 2.0,
@@ -35,10 +41,13 @@ class Display extends StatelessWidget {
         darkTheme: ThemeData(
           primaryColor: ekoGreen,
           accentColor: ekoDarkGreen,
-          backgroundColor: Color.fromARGB(255, 88, 88, 88),
-          scaffoldBackgroundColor: Color.fromARGB(255, 88, 88, 88),
+          scaffoldBackgroundColor: Color.fromARGB(255, 32, 32, 32),
+          iconTheme: IconThemeData(color: Colors.white),
           textTheme: TextTheme(
-            bodyText1: TextStyle(color: Colors.white, letterSpacing: 2.0),
+            bodyText1: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0,
+                fontWeight: FontWeight.normal),
             headline1: TextStyle(
               color: Colors.white,
               letterSpacing: 2.0,
@@ -88,7 +97,7 @@ class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin {
             child: Scanner(),
           ),
           Center(
-            child: FicheProduit(),
+            child: Memo(),
           )
         ],
       ),
