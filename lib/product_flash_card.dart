@@ -34,7 +34,7 @@ class _FicheProduitState extends State<FicheProduit> {
         onPressed: () {
           setState(() {
             //just to test button and statefull
-            prod.product = "Barilla spaghetti n°5";
+            prod.product = "Barilla pates spaghetti n°5 - 500 g";
             prod.brand = "Barilla";
             prod.origin = "Italie";
             prod.packaging = "carton";
@@ -59,6 +59,7 @@ class _FicheProduitState extends State<FicheProduit> {
             children: <Widget>[
               Center(
                 child: Text('${prod.product}',
+                    maxLines: 3,
                     style: TextStyle(
                       color: Colors.blueGrey[700],
                       letterSpacing: 2.0,
@@ -75,7 +76,11 @@ class _FicheProduitState extends State<FicheProduit> {
                   radius: 60.0,
                 ),
               ),
-              Divider(height: 50.0, color: Colors.blueGrey),
+              Divider(
+                height: 50.0,
+                color: Colors.blueGrey,
+                thickness: 1,
+              ),
               Row(children: <Widget>[
                 Icon(
                   Icons.eco_outlined,
@@ -108,7 +113,11 @@ class _FicheProduitState extends State<FicheProduit> {
                       )),
                 ],
               ),
-              Divider(height: 50.0, color: Colors.blueGrey),
+              Divider(
+                height: 50.0,
+                color: Colors.blueGrey,
+                thickness: 1,
+              ),
               Text(
                 'Informations',
                 style: Theme.of(context).textTheme.headline1,
