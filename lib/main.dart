@@ -1,44 +1,43 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'scanner.dart';
-import 'product_flash_card.dart';
 
+import 'product_flash_card.dart';
+import 'test_dorian.dart';
 
 const Color EKO_Green = Color.fromARGB(255, 0, 205, 130);
 const Color EKO_DarkGreen = Color.fromARGB(255, 0, 151, 95);
 
-//TO TEST MAIN APP
-//void main() => runApp(Display());
+void main() => runApp(Display());
 
-//TO TEST PRODUCT FLASH CARD
-void main() => runApp(MaterialApp(
-    home: FicheProduit()
-));
-
-class Display extends StatelessWidget
-{
+class Display extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'test',
-      home: EkoScan()
-    );
+        title: 'test',
+
+        //Themes
+        theme: ThemeData(
+          primaryColor: EKO_Green,
+          backgroundColor: Color.fromARGB(255, 200, 200, 200),
+        ),
+        darkTheme: ThemeData(
+          primaryColor: EKO_Green,
+          backgroundColor: Color.fromARGB(255, 88, 88, 88),
+        ),
+
+        // Widget to change to perform tests
+        home: EkoScan());
   }
 }
 
-
-class EkoScan extends StatefulWidget
-{
-  EkoScan({Key key}) : super(key : key);
+class EkoScan extends StatefulWidget {
+  EkoScan({Key key}) : super(key: key);
 
   @override
   EkoScan_State createState() => EkoScan_State();
 }
 
-
-
-class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin
-{
+class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin {
   TabController _tabController;
 
   @override
@@ -63,7 +62,7 @@ class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin
             child: Text("History"),
           ),
           Center(
-            child: BarcodeScan(),
+            child: Scanner(),
           ),
           Center(
             child: Text("Map"),
@@ -77,29 +76,20 @@ class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin
             controller: _tabController,
             indicator: BoxDecoration(color: EKO_DarkGreen),
             tabs: <Widget>[
-              Tab(child:
-              Column(
-                children: [
-                  Icon(Icons.bar_chart),
-                  Text("History")
-                ],
+              Tab(
+                child: Column(
+                  children: [Icon(Icons.bar_chart), Text("History")],
+                ),
               ),
+              Tab(
+                child: Column(
+                  children: [Icon(Icons.aspect_ratio), Text("Scan")],
+                ),
               ),
-              Tab(child:
-              Column(
-                children: [
-                  Icon(Icons.aspect_ratio),
-                  Text("Scan")
-                ],
-              ),
-              ),
-              Tab(child:
-              Column(
-                children: [
-                  Icon(Icons.map),
-                  Text("Map")
-                ],
-              ),
+              Tab(
+                child: Column(
+                  children: [Icon(Icons.map), Text("Map")],
+                ),
               ),
             ],
           ),
@@ -107,5 +97,4 @@ class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin
       ),
     );
   }
-
 }
