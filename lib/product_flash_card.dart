@@ -47,10 +47,10 @@ class _FicheProduitState extends State<FicheProduit> {
         },
         child: Icon(
           Icons.info_outline_rounded,
-          color: Colors.white,
+          color: Theme.of(context).iconTheme.color,
           size: 40.0,
         ),
-        backgroundColor: Colors.greenAccent[400],
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: Padding(
           padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 30.0),
@@ -59,13 +59,7 @@ class _FicheProduitState extends State<FicheProduit> {
             children: <Widget>[
               Center(
                 child: Text('${prod.product}',
-                    maxLines: 3,
-                    style: TextStyle(
-                      color: Colors.blueGrey[700],
-                      letterSpacing: 2.0,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                    )),
+                    maxLines: 3, style: Theme.of(context).textTheme.headline1),
               ),
               SizedBox(
                 height: 15.0,
@@ -131,13 +125,8 @@ class _FicheProduitState extends State<FicheProduit> {
                 SizedBox(
                   width: 10.0,
                 ),
-                Text(
-                  'Marque : ${prod.brand}',
-                  style: TextStyle(
-                    color: Colors.blueGrey,
-                    letterSpacing: 2.0,
-                  ),
-                ),
+                Text('Marque : ${prod.brand}',
+                    style: Theme.of(context).textTheme.bodyText1),
               ]),
               SizedBox(height: 15.0),
               Row(children: <Widget>[
@@ -147,8 +136,7 @@ class _FicheProduitState extends State<FicheProduit> {
                 ),
                 SizedBox(width: 10.0),
                 Text('${prod.fairtrade}',
-                    style:
-                        TextStyle(color: Colors.blueGrey, letterSpacing: 2.0)),
+                    style: Theme.of(context).textTheme.bodyText1),
               ]),
               SizedBox(
                 height: 15.0,
