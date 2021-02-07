@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'product_flash_card.dart';
 import 'test_dorian.dart';
 
-const Color EKO_Green = Color.fromARGB(255, 0, 205, 130);
-const Color EKO_DarkGreen = Color.fromARGB(255, 0, 151, 95);
-
 void main() => runApp(Display());
 
 class Display extends StatelessWidget {
+  final Color ekoGreen = Color.fromARGB(255, 0, 205, 130);
+  final Color ekoDarkGreen = Color.fromARGB(255, 0, 151, 95);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,11 +17,13 @@ class Display extends StatelessWidget {
 
         //Themes
         theme: ThemeData(
-          primaryColor: EKO_Green,
+          primaryColor: ekoGreen,
+          accentColor: ekoDarkGreen,
           backgroundColor: Color.fromARGB(255, 200, 200, 200),
         ),
         darkTheme: ThemeData(
-          primaryColor: EKO_Green,
+          primaryColor: ekoGreen,
+          accentColor: ekoDarkGreen,
           backgroundColor: Color.fromARGB(255, 88, 88, 88),
         ),
 
@@ -71,10 +73,10 @@ class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin {
       ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
-          color: EKO_Green,
+          color: Theme.of(context).primaryColor,
           child: TabBar(
             controller: _tabController,
-            indicator: BoxDecoration(color: EKO_DarkGreen),
+            indicator: BoxDecoration(color: Theme.of(context).accentColor),
             tabs: <Widget>[
               Tab(
                 child: Column(
