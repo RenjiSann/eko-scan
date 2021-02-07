@@ -113,6 +113,17 @@ class _FicheProduitState extends State<FicheProduit> {
                       )),
                 ],
               ),
+              SizedBox(height: 15.0,),
+              RaisedButton(
+                  onPressed: () {
+                    setState(() {
+                      prod.product += " is liked";
+                    });
+                  },
+                  shape: StadiumBorder(),
+                  child:
+                  Icon(Icons.favorite_border_rounded, color: Colors.pink[700], size: 30,)
+              ),
               Divider(
                 height: 50.0,
                 color: Colors.blueGrey,
@@ -178,7 +189,8 @@ class _FicheProduitState extends State<FicheProduit> {
                 ),
                 Text('Emballage : ${prod.packaging}',
                     style: Theme.of(context).textTheme.bodyText1)
-              ])
+              ]
+              ),
             ],
           )),
     );
