@@ -66,10 +66,10 @@ class EkoScan extends StatefulWidget {
   EkoScan({Key key}) : super(key: key);
 
   @override
-  EkoScan_State createState() => EkoScan_State();
+  _EkoScanState createState() => _EkoScanState();
 }
 
-class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin {
+class _EkoScanState extends State<EkoScan> with TickerProviderStateMixin {
   TabController _tabController;
 
   @override

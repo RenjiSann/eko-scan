@@ -52,14 +52,16 @@ class _FicheProduitState extends State<FicheProduit> {
         ),
         backgroundColor: Theme.of(context).primaryColor,
       ),
-      body: Padding(
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Padding(
           padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 30.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Center(
                 child: Text('${prod.product}',
-                    maxLines: 3, style: Theme.of(context).textTheme.headline1),
+                    maxLines: 10, style: Theme.of(context).textTheme.headline1),
               ),
               SizedBox(
                 height: 15.0,
@@ -186,7 +188,9 @@ class _FicheProduitState extends State<FicheProduit> {
                     maxLines: 3, style: Theme.of(context).textTheme.bodyText1)
               ]),
             ],
-          )),
+          ),
+        ),
+      ),
     );
   }
 }

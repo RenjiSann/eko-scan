@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:openfoodfacts/openfoodfacts.dart';
 
 class Product {
