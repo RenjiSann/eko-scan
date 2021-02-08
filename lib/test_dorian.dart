@@ -17,7 +17,7 @@ class _ScannerState extends State<Scanner> {
   // To avoid pressing the button twice
   bool scanEnabled = true;
 
-  // TODO : Make this beautiful
+  // TODO : Make this beautifuL
   @override
   Widget build(BuildContext context) {
     return Scaffold(
