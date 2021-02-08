@@ -14,6 +14,10 @@ class _ScannerState extends State<Scanner> {
   // Hold the value of the scanned barcode once scanned
   String barcodeData = "None";
 
+  // To avoid pressing the button twice
+  bool scanEnabled = true;
+
+  // TODO : Make this beautiful
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +27,11 @@ class _ScannerState extends State<Scanner> {
             Text("Scan Result", style: Theme.of(context).textTheme.headline1),
             Text('$barcodeData', style: Theme.of(context).textTheme.bodyText1),
             RaisedButton(
-              onPressed: scanBarcode,
+              onPressed: () {
+                if (!scanEnabled) return;
+                scanEnabled = false;
+                scanBarcode();
+              },
               shape: StadiumBorder(),
               color: Theme.of(context).primaryColor,
             ),
@@ -44,6 +52,7 @@ class _ScannerState extends State<Scanner> {
 
       setState(() {
         this.barcodeData = scanRes;
+        scanEnabled = true;
       });
     } on PlatformException {
       this.barcodeData = "Error";
