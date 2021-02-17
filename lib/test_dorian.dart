@@ -45,7 +45,7 @@ class _ScannerState extends State<Scanner> {
           "#ff0000", "Back", true, ScanMode.BARCODE);
 
       ProductResult result = await OpenFoodAPIClient.getProductRaw(
-          "3017620422003", OpenFoodFactsLanguage.FRENCH);
+          scanRes, OpenFoodFactsLanguage.FRENCH);
       Produit newProduct = new Produit(
           result.product.productNameFR,
           result.product.brands,
@@ -65,7 +65,7 @@ class _ScannerState extends State<Scanner> {
         this.barcodeData = scanRes;
       });
       Navigator.push(context,
-        MaterialPageRoute(builder: (context) => FicheProduit(newProduct)));
+          MaterialPageRoute(builder: (context) => FicheProduit(newProduct)));
     } on PlatformException {
       this.barcodeData = "Error";
     }
