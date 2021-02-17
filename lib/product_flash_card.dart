@@ -1,4 +1,7 @@
+import 'package:eko_scan/scanner.dart';
+import 'package:eko_scan/test_dorian.dart';
 import 'package:flutter/material.dart';
+import 'scanner.dart';
 import 'product.dart';
 
 class FicheProduit extends StatefulWidget {
@@ -8,12 +11,13 @@ class FicheProduit extends StatefulWidget {
 
 class _FicheProduitState extends State<FicheProduit> {
   //creating product
-  Product prod = Product(
+
+  Produit prod = Produit(
       "Volvic citron",
       "Volvic",
       "recyclable",
       "France",
-      "plastique",
+      null,
       "Non issu du commerce équitable",
       "https://static.openfoodfacts.org/images/products/305/764/038/5148/front_fr.162.200.jpg",
       7.0);
@@ -37,7 +41,7 @@ class _FicheProduitState extends State<FicheProduit> {
             prod.product = "Barilla pates spaghetti n°5 - 500 g";
             prod.brand = "Barilla";
             prod.origin = "Italie";
-            prod.packaging = "carton";
+            prod.packaging = null;
             prod.bin = "recyclable";
             prod.fairtrade = "Non issu du commerce équitable";
             prod.score = 6.0;

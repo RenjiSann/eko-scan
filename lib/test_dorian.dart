@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:openfoodfacts/model/ProductResult.dart';
+import 'package:openfoodfacts/openfoodfacts.dart';
+import 'product.dart';
 
 /*
 / Scanner widget 
@@ -39,6 +42,21 @@ class _ScannerState extends State<Scanner> {
     try {
       final scanRes = await FlutterBarcodeScanner.scanBarcode(
           "#ff0000", "Back", true, ScanMode.BARCODE);
+
+      ProductResult result = await OpenFoodAPIClient.getProductRaw(
+          "3017620422003", OpenFoodFactsLanguage.FRENCH);
+      Produit newProduct = new Produit(
+          result.product.productNameFR,
+          result.product.brands,
+          "recyclable",
+          result.product.countries,
+          result.product.ingredients,
+          "Bah non",
+          result.product.imgSmallUrl,
+          result.product.ecoscoreScore);
+      if (result.status != 1) {
+        return Text("Scan successful");
+      }
 
       if (!mounted) return;
 
