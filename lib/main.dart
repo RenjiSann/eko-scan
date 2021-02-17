@@ -89,10 +89,10 @@ class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin {
     return Scaffold(
       body: TabBarView(
         controller: _tabController,
-        children: <Widget>[/*
+        children: <Widget>[
           Center(
-            child: FicheProduit(),
-          ),*/
+            child: FicheProduit(null),
+          ),
           Center(
             child: Scanner(),
           ),
