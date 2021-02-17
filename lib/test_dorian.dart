@@ -66,5 +66,7 @@ class _ScannerState extends State<Scanner> {
     } on PlatformException {
       this.barcodeData = "Error";
     }
+
+    FicheProduit fp = new FicheProduit(newProduct);
   }
 }

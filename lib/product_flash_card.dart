@@ -5,22 +5,15 @@ import 'scanner.dart';
 import 'product.dart';
 
 class FicheProduit extends StatefulWidget {
+  final Produit prod;
+
+  FicheProduit(this.prod);
+
   @override
   _FicheProduitState createState() => _FicheProduitState();
 }
 
 class _FicheProduitState extends State<FicheProduit> {
-  //creating product
-
-  Produit prod = Produit(
-      "Volvic citron",
-      "Volvic",
-      "recyclable",
-      "France",
-      null,
-      "Non issu du commerce équitable",
-      "https://static.openfoodfacts.org/images/products/305/764/038/5148/front_fr.162.200.jpg",
-      7.0);
 
   //To try with the API !!!
   //Product prod = Product(product, brand, bin, origin, packaging, fairtrade, pic, score)
