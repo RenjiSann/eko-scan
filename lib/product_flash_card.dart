@@ -31,14 +31,14 @@ class _FicheProduitState extends State<FicheProduit> {
         onPressed: () {
           setState(() {
             //just to test button and statefull
-            prod.product = "Barilla pates spaghetti n°5 - 500 g";
-            prod.brand = "Barilla";
-            prod.origin = "Italie";
-            prod.packaging = null;
-            prod.bin = "recyclable";
-            prod.fairtrade = "Non issu du commerce équitable";
-            prod.score = 6.0;
-            prod.pic =
+            widget.prod.product = "Barilla pates spaghetti n°5 - 500 g";
+            widget.prod.brand = "Barilla";
+            widget.prod.origin = "Italie";
+            widget.prod.packaging = null;
+            widget.prod.bin = "recyclable";
+            widget.prod.fairtrade = "Non issu du commerce équitable";
+            widget.prod.score = 6.0;
+            widget.prod.pic =
                 "https://static.openfoodfacts.org/images/products/807/680/019/5057/front_fr.334.200.jpg";
           });
         },
@@ -65,7 +65,7 @@ class _FicheProduitState extends State<FicheProduit> {
                   ),
                   Center(
                     child: CircleAvatar(
-                      backgroundImage: NetworkImage(prod.pic),
+                      backgroundImage: NetworkImage(widget.prod.pic),
                       radius: 60.0,
                     ),
                   ),
@@ -81,7 +81,7 @@ class _FicheProduitState extends State<FicheProduit> {
                     ),
                     SizedBox(width: 10.0),
                     Text(
-                      'EKO-SCORE : ${prod.score}/10',
+                      'EKO-SCORE : ${widget.prod.score}/10',
                       maxLines: 3,
                       style: TextStyle(
                           color: Colors.greenAccent[700],
@@ -100,7 +100,7 @@ class _FicheProduitState extends State<FicheProduit> {
                       SizedBox(
                         width: 10.0,
                       ),
-                      Text('${prod.bin}',
+                      Text('${widget.prod.bin}',
                           maxLines: 3,
                           style: TextStyle(
                             color: Colors.greenAccent[700],
@@ -114,8 +114,8 @@ class _FicheProduitState extends State<FicheProduit> {
                   RaisedButton(
                       onPressed: () {
                         setState(() {
-                          prod.product += " is liked";
-                          prod.fairtrade += "is not is not";
+                          widget.prod.product += " is liked";
+                          widget.prod.fairtrade += "is not is not";
                         });
                       },
                       shape: StadiumBorder(),
@@ -142,7 +142,7 @@ class _FicheProduitState extends State<FicheProduit> {
                     SizedBox(
                       width: 10.0,
                     ),
-                    Text('Marque : ${prod.brand}',
+                    Text('Marque : ${widget.prod.brand}',
                         maxLines: 3,
                         style: Theme.of(context).textTheme.bodyText1),
                   ]),
@@ -153,7 +153,7 @@ class _FicheProduitState extends State<FicheProduit> {
                       color: Colors.blueGrey,
                     ),
                     SizedBox(width: 10.0),
-                    Text('${prod.fairtrade}',
+                    Text('${widget.prod.fairtrade}',
                         maxLines: 3,
                         style: Theme.of(context).textTheme.bodyText1),
                   ]),
@@ -170,7 +170,7 @@ class _FicheProduitState extends State<FicheProduit> {
                         width: 10.0,
                       ),
                       Text(
-                        'Origine : ${prod.origin}',
+                        'Origine : ${widget.prod.origin}',
                         maxLines: 3,
                         style: Theme.of(context).textTheme.bodyText1,
                       )
@@ -184,7 +184,7 @@ class _FicheProduitState extends State<FicheProduit> {
                     SizedBox(
                       width: 10.0,
                     ),
-                    Text('Emballage : ${prod.packaging}',
+                    Text('Emballage : ${widget.prod.packaging}',
                         maxLines: 3,
                         style: Theme.of(context).textTheme.bodyText1)
                   ]),
