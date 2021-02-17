@@ -64,7 +64,8 @@ class _ScannerState extends State<Scanner> {
       setState(() {
         this.barcodeData = scanRes;
       });
-      FicheProduit fp = new FicheProduit(newProduct);
+      Navigator.push(context,
+        MaterialPageRoute(builder: (context) => FicheProduit(newProduct)));
     } on PlatformException {
       this.barcodeData = "Error";
     }
