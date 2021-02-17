@@ -14,7 +14,6 @@ class FicheProduit extends StatefulWidget {
 }
 
 class _FicheProduitState extends State<FicheProduit> {
-
   //To try with the API !!!
   //Product prod = Product(product, brand, bin, origin, packaging, fairtrade, pic, score)
 
@@ -37,7 +36,7 @@ class _FicheProduitState extends State<FicheProduit> {
             widget.prod.packaging = null;
             widget.prod.bin = "recyclable";
             widget.prod.fairtrade = "Non issu du commerce équitable";
-            widget.prod.score = 6.0;
+            widget.prod.score = 6;
             widget.prod.pic =
                 "https://static.openfoodfacts.org/images/products/807/680/019/5057/front_fr.334.200.jpg";
           });
@@ -81,7 +80,7 @@ class _FicheProduitState extends State<FicheProduit> {
                     ),
                     SizedBox(width: 10.0),
                     Text(
-                      'EKO-SCORE : ${widget.prod.score}/10',
+                      'EKO-SCORE : ${widget.prod.score}/100',
                       maxLines: 3,
                       style: TextStyle(
                           color: Colors.greenAccent[700],

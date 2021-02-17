@@ -41,11 +41,15 @@ class _ScannerState extends State<Scanner> {
 
   Future<void> scanBarcode() async {
     try {
+      int temp;
       final scanRes = await FlutterBarcodeScanner.scanBarcode(
           "#ff0000", "Back", true, ScanMode.BARCODE);
 
       ProductResult result = await OpenFoodAPIClient.getProductRaw(
           scanRes, OpenFoodFactsLanguage.FRENCH);
+      if (result.product.ecoscoreScore != null) {
+        temp = result.product.ecoscoreScore.toInt();
+      }
       Produit newProduct = new Produit(
           result.product.productNameFR,
           result.product.brands,
@@ -54,7 +58,7 @@ class _ScannerState extends State<Scanner> {
           result.product.ingredients,
           "Bah non",
           result.product.imgSmallUrl,
-          result.product.ecoscoreScore);
+          temp);
       if (result.status != 1) {
         return Text("Scan successful");
       }

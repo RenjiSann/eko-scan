@@ -9,7 +9,7 @@ class Produit {
   List<Ingredient> packaging;
   String fairtrade;
   String pic;
-  double score;
+  int score;
 
   //constructor
   Produit(
@@ -20,7 +20,7 @@ class Produit {
     List<Ingredient> packaging,
     String fairtrade,
     String pic,
-    double score,
+    int score,
   ) {
     this.product = product;
     this.brand = brand;

@@ -26,7 +26,7 @@ class BarcodeState extends State<BarcodeScan> {
           null,
           "Bah non",
           result.product.imgSmallUrl,
-          result.product.ecoscoreScore);
+          result.product.ecoscoreScore.toInt());
       if (result.status != 1) {
         return Text("Scan successful");
       }
