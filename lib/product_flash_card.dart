@@ -56,7 +56,7 @@ class _FicheProduitState extends State<FicheProduit> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Center(
-                    child: Text('${prod.product}',
+                    child: Text('${widget.prod.product}',
                         maxLines: 3,
                         style: Theme.of(context).textTheme.headline1),
                   ),
