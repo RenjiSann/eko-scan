@@ -111,23 +111,18 @@ class _FicheProduitState extends State<FicheProduit> {
                   SizedBox(
                     height: 15.0,
                   ),
-                  Row(children: <Widget>[
-                    RaisedButton(
-                        onPressed: () {
-                          setState(() {
-                            widget.callback(widget.prod);
-                          });
-                        },
-                        shape: StadiumBorder(),
-                        child: Icon(
-                          Icons.favorite_border_rounded,
-                          color: Colors.pink[700],
-                          size: 30,
-                        )),
-                    Expanded(
-                      child: Text(this.nb_likes.toString()),
-                    )
-                  ]),
+                  RaisedButton(
+                      onPressed: () {
+                        setState(() {
+                          widget.callback(widget.prod);
+                        });
+                      },
+                      shape: StadiumBorder(),
+                      child: Icon(
+                        Icons.favorite_border_rounded,
+                        color: Colors.pink[700],
+                        size: 30,
+                      )),
                   Divider(
                     height: 50.0,
                     color: Colors.blueGrey,
