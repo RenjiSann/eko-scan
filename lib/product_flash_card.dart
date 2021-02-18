@@ -6,8 +6,9 @@ import 'product.dart';
 
 class FicheProduit extends StatefulWidget {
   final Produit prod;
+  final Function(Produit) callback;
 
-  FicheProduit(this.prod);
+  FicheProduit(this.prod, this.callback);
 
   @override
   _FicheProduitState createState() => _FicheProduitState();
@@ -114,10 +115,7 @@ class _FicheProduitState extends State<FicheProduit> {
                     RaisedButton(
                         onPressed: () {
                           setState(() {
-                            /*
-                            widget.prod.product += " is liked";
-                            widget.prod.fairtrade += "is not is not";*/
-                            this.nb_likes += 1;
+                            widget.callback(widget.prod);
                           });
                         },
                         shape: StadiumBorder(),
