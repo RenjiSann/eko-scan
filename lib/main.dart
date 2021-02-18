@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'historic.dart';
 import 'product_flash_card.dart';
 import 'memo.dart';
 import 'test_dorian.dart';
@@ -91,7 +92,7 @@ class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin {
         controller: _tabController,
         children: <Widget>[
           Center(
-            child: FicheProduit(null),
+            child: Historic([]),
           ),
           Center(
             child: Scanner(),

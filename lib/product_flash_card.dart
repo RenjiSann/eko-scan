@@ -16,7 +16,7 @@ class FicheProduit extends StatefulWidget {
 class _FicheProduitState extends State<FicheProduit> {
   //To try with the API !!!
   //Product prod = Product(product, brand, bin, origin, packaging, fairtrade, pic, score)
-
+  int nb_likes = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,19 +110,26 @@ class _FicheProduitState extends State<FicheProduit> {
                   SizedBox(
                     height: 15.0,
                   ),
-                  RaisedButton(
-                      onPressed: () {
-                        setState(() {
-                          widget.prod.product += " is liked";
-                          widget.prod.fairtrade += "is not is not";
-                        });
-                      },
-                      shape: StadiumBorder(),
-                      child: Icon(
-                        Icons.favorite_border_rounded,
-                        color: Colors.pink[700],
-                        size: 30,
-                      )),
+                  Row(children: <Widget>[
+                    RaisedButton(
+                        onPressed: () {
+                          setState(() {
+                            /*
+                            widget.prod.product += " is liked";
+                            widget.prod.fairtrade += "is not is not";*/
+                            this.nb_likes += 1;
+                          });
+                        },
+                        shape: StadiumBorder(),
+                        child: Icon(
+                          Icons.favorite_border_rounded,
+                          color: Colors.pink[700],
+                          size: 30,
+                        )),
+                    Expanded(
+                      child: Text(this.nb_likes.toString()),
+                    )
+                  ]),
                   Divider(
                     height: 50.0,
                     color: Colors.blueGrey,
@@ -141,9 +148,11 @@ class _FicheProduitState extends State<FicheProduit> {
                     SizedBox(
                       width: 10.0,
                     ),
-                    Text('Marque : ${widget.prod.brand}',
-                        maxLines: 3,
-                        style: Theme.of(context).textTheme.bodyText1),
+                    Expanded(
+                      child: Text('Marque : ${widget.prod.brand}',
+                          maxLines: 3,
+                          style: Theme.of(context).textTheme.bodyText1),
+                    )
                   ]),
                   SizedBox(height: 15.0),
                   Row(children: <Widget>[
@@ -152,9 +161,11 @@ class _FicheProduitState extends State<FicheProduit> {
                       color: Colors.blueGrey,
                     ),
                     SizedBox(width: 10.0),
-                    Text('${widget.prod.fairtrade}',
-                        maxLines: 3,
-                        style: Theme.of(context).textTheme.bodyText1),
+                    Expanded(
+                      child: Text('${widget.prod.fairtrade}',
+                          maxLines: 3,
+                          style: Theme.of(context).textTheme.bodyText1),
+                    )
                   ]),
                   SizedBox(
                     height: 15.0,
@@ -168,11 +179,12 @@ class _FicheProduitState extends State<FicheProduit> {
                       SizedBox(
                         width: 10.0,
                       ),
-                      Text(
+                      Expanded(
+                          child: Text(
                         'Origine : ${widget.prod.origin}',
                         maxLines: 3,
                         style: Theme.of(context).textTheme.bodyText1,
-                      )
+                      ))
                     ],
                   ),
                   SizedBox(
@@ -183,9 +195,10 @@ class _FicheProduitState extends State<FicheProduit> {
                     SizedBox(
                       width: 10.0,
                     ),
-                    Text('Emballage : ${widget.prod.packaging}',
-                        maxLines: 3,
-                        style: Theme.of(context).textTheme.bodyText1)
+                    Expanded(
+                        child: Text('Emballage : ${widget.prod.packaging}',
+                            maxLines: 3,
+                            style: Theme.of(context).textTheme.bodyText1))
                   ]),
                 ],
               ))),
