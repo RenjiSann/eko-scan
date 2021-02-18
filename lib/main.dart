@@ -79,7 +79,7 @@ class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 3, initialIndex: 1, vsync: this);
   }
 
   @override
@@ -90,7 +90,8 @@ class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin {
 
   void addProducts(Produit produit) {
     this.setState(() {
-      this.prods.add(produit);
+      this.prods.insert(0, produit);
+      if (this.prods.length == 20) this.prods.removeAt(this.prods.length - 1);
     });
   }
 
@@ -100,7 +101,8 @@ class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin {
       body: TabBarView(
         controller: _tabController,
         children: <Widget>[
-          Center(child: Expanded(child: Historic(this.prods))),
+          Center(
+              child: Expanded(child: Historic(this.prods, this.addProducts))),
           Center(child: Scanner(this.addProducts)),
           Center(
             child: Memo(),

@@ -72,6 +72,7 @@ class _ScannerState extends State<Scanner> {
       setState(() {
         this.barcodeData = scanRes;
       });
+      widget.callback(newProduct);
       Navigator.push(
           context,
           MaterialPageRoute(
