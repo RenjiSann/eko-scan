@@ -10,6 +10,10 @@ import 'product.dart';
 / Scanner widget 
 */
 class Scanner extends StatefulWidget {
+  final Function(Produit) callback;
+
+  Scanner(this.callback);
+
   @override
   _ScannerState createState() => _ScannerState();
 }
@@ -68,8 +72,10 @@ class _ScannerState extends State<Scanner> {
       setState(() {
         this.barcodeData = scanRes;
       });
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => FicheProduit(newProduct)));
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => FicheProduit(newProduct, widget.callback)));
     } on PlatformException {
       this.barcodeData = "Error";
     }

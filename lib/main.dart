@@ -1,3 +1,4 @@
+import 'package:eko_scan/product.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -73,6 +74,8 @@ class EkoScan extends StatefulWidget {
 class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin {
   TabController _tabController;
 
+  List<Produit> prods = [];
+
   @override
   void initState() {
     super.initState();
@@ -85,18 +88,20 @@ class EkoScan_State extends State<EkoScan> with TickerProviderStateMixin {
     super.dispose();
   }
 
+  void addProducts(Produit produit) {
+    this.setState(() {
+      this.prods.add(produit);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: TabBarView(
         controller: _tabController,
         children: <Widget>[
-          Center(
-            child: Historic([]),
-          ),
-          Center(
-            child: Scanner(),
-          ),
+          Center(child: Expanded(child: Historic(this.prods))),
+          Center(child: Scanner(this.addProducts)),
           Center(
             child: Memo(),
           )
