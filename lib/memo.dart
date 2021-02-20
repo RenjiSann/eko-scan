@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
-    home: Memo()
-));
+void main() => runApp(MaterialApp(home: Memo()));
 
-class Memo extends StatelessWidget
-{
+class Memo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,44 +25,40 @@ class Memo extends StatelessWidget
                         Icons.autorenew_rounded,
                         color: Colors.greenAccent[700],
                       ),
-                      SizedBox(width: 10.0,),
+                      SizedBox(
+                        width: 10.0,
+                      ),
                       Text(
                         'À recycler : ',
                         style: TextStyle(
                             fontSize: 20.0,
                             color: Colors.blueGrey,
                             fontWeight: FontWeight.bold,
-                            letterSpacing: 2.0
-                        ),
+                            letterSpacing: 2.0),
                       ),
                     ],
                   ),
-                  SizedBox(height: 15.0,),
-                  Text(
-                      '-carton',
+                  SizedBox(
+                    height: 15.0,
+                  ),
+                  Text('-carton',
                       style: TextStyle(
                           fontSize: 15.0,
                           color: Colors.blueGrey,
-                          letterSpacing: 1.0
-                      )
+                          letterSpacing: 1.0)),
+                  SizedBox(
+                    height: 5.0,
                   ),
-                  SizedBox(height: 5.0,),
-                  Text(
-                      '-bouteille en plastique',
+                  Text('-bouteille en plastique',
                       style: TextStyle(
                           fontSize: 15.0,
                           color: Colors.blueGrey,
-                          letterSpacing: 1.0
-                      )
-                  ),
-                  Text(
-                      '...',
-                      style : TextStyle(
+                          letterSpacing: 1.0)),
+                  Text('...',
+                      style: TextStyle(
                           fontSize: 15.0,
                           color: Colors.blueGrey,
-                          letterSpacing: 1.0
-                      )
-                  ),
+                          letterSpacing: 1.0)),
                   Divider(
                     height: 30.0,
                     color: Colors.grey,
@@ -77,27 +70,25 @@ class Memo extends StatelessWidget
                         Icons.rotate_right_rounded,
                         color: Colors.blueAccent,
                       ),
-                      SizedBox(width: 10.0,),
-                      Text(
-                          'À jeter',
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Text('À jeter',
                           style: TextStyle(
                               color: Colors.blueGrey,
                               fontSize: 20.0,
                               letterSpacing: 2.0,
-                              fontWeight: FontWeight.bold
-                          )
-                      ),
+                              fontWeight: FontWeight.bold)),
                     ],
                   ),
-                  SizedBox(height: 20.0,),
-                  Text(
-                      '-bouteille en plastique',
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text('-bouteille en plastique',
                       style: TextStyle(
                           fontSize: 15.0,
                           color: Colors.blueGrey,
-                          letterSpacing: 1.0
-                      )
-                  ),
+                          letterSpacing: 1.0)),
                   Divider(
                     height: 30.0,
                     color: Colors.grey,
@@ -109,27 +100,27 @@ class Memo extends StatelessWidget
                         Icons.brightness_1_outlined,
                         color: Colors.black,
                       ),
-                      SizedBox(width: 10.0,),
+                      SizedBox(
+                        width: 10.0,
+                      ),
                       Text(
                         'Le verre',
                         style: TextStyle(
                             color: Colors.blueGrey,
                             fontSize: 20.0,
                             letterSpacing: 2.0,
-                            fontWeight: FontWeight.bold
-                        ),
+                            fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
-                  SizedBox(height: 20.0,),
-                  Text(
-                      'Le jeter dans les points de collecte.',
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text('Le jeter dans les points de collecte.',
                       style: TextStyle(
                           color: Colors.blueGrey,
                           fontSize: 15.0,
-                          letterSpacing: 1.0
-                      )
-                  ),
+                          letterSpacing: 1.0)),
                   Divider(
                     height: 30.0,
                     color: Colors.grey,
@@ -141,27 +132,25 @@ class Memo extends StatelessWidget
                         Icons.lightbulb_outline_rounded,
                         color: Colors.black,
                       ),
-                      SizedBox(width: 10.0,),
-                      Text(
-                          'Les ampoules',
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Text('Les ampoules',
                           style: TextStyle(
                               color: Colors.blueGrey,
                               fontSize: 20.0,
                               letterSpacing: 2.0,
-                              fontWeight: FontWeight.bold
-                          )
-                      )
+                              fontWeight: FontWeight.bold))
                     ],
                   ),
-                  SizedBox(height: 20.0,),
-                  Text(
-                      'Les jeter dans les points de collecte.',
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text('Les jeter dans les points de collecte.',
                       style: TextStyle(
                           color: Colors.blueGrey,
                           fontSize: 15.0,
-                          letterSpacing: 1.0
-                      )
-                  ),
+                          letterSpacing: 1.0)),
                   Divider(
                     height: 30.0,
                     color: Colors.grey,
@@ -173,30 +162,28 @@ class Memo extends StatelessWidget
                         Icons.battery_charging_full_rounded,
                         color: Colors.black,
                       ),
-                      SizedBox(width: 10.0,),
+                      SizedBox(
+                        width: 10.0,
+                      ),
                       Text(
                         'Les piles',
                         style: TextStyle(
                             color: Colors.blueGrey,
                             fontSize: 20.0,
                             letterSpacing: 2.0,
-                            fontWeight: FontWeight.bold
-                        ),
+                            fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
-                  SizedBox(height: 20.0,),
-                  Text(
-                      'Les jeter dans les points de collecte.',
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text('Les jeter dans les points de collecte.',
                       style: TextStyle(
                           color: Colors.blueGrey,
                           fontSize: 15.0,
-                          letterSpacing: 1.0
-                      )
-                  ),
-                ]
-            )
-        ),
+                          letterSpacing: 1.0)),
+                ])),
       ),
     );
   }

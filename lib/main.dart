@@ -1,6 +1,8 @@
+import 'package:eko_scan/product.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'historic.dart';
 import 'product_flash_card.dart';
 import 'memo.dart';
 import 'test_dorian.dart';
@@ -72,16 +74,25 @@ class EkoScan extends StatefulWidget {
 class _EkoScanState extends State<EkoScan> with TickerProviderStateMixin {
   TabController _tabController;
 
+  List<Produit> prods = [];
+
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 3, initialIndex: 1, vsync: this);
   }
 
   @override
   void dispose() {
     _tabController.dispose();
     super.dispose();
+  }
+
+  void addProducts(Produit produit) {
+    this.setState(() {
+      this.prods.insert(0, produit);
+      if (this.prods.length == 20) this.prods.removeAt(this.prods.length - 1);
+    });
   }
 
   @override
@@ -91,11 +102,8 @@ class _EkoScanState extends State<EkoScan> with TickerProviderStateMixin {
         controller: _tabController,
         children: <Widget>[
           Center(
-            child: FicheProduit(),
-          ),
-          Center(
-            child: Scanner(),
-          ),
+              child: Expanded(child: Historic(this.prods, this.addProducts))),
+          Center(child: Scanner(this.addProducts)),
           Center(
             child: Memo(),
           )
