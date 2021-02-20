@@ -1,8 +1,6 @@
-
 import 'package:openfoodfacts/model/Ingredient.dart';
 
 class Produit {
->>>>>>> lisa
   //Characteristics of each product
   String product;
   String brand;
@@ -24,7 +22,6 @@ class Produit {
     String pic,
     int score,
   ) {
->>>>>>> lisa
     this.product = product;
     this.brand = brand;
     this.bin = bin;
