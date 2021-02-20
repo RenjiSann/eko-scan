@@ -18,6 +18,7 @@ class _FicheProduitState extends State<FicheProduit> {
   //To try with the API !!!
   //Product prod = Product(product, brand, bin, origin, packaging, fairtrade, pic, score)
   int nb_likes = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,18 +30,7 @@ class _FicheProduitState extends State<FicheProduit> {
       ),*/
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {
-            //just to test button and statefull
-            widget.prod.product = "Barilla pates spaghetti n°5 - 500 g";
-            widget.prod.brand = "Barilla";
-            widget.prod.origin = "Italie";
-            widget.prod.packaging = null;
-            widget.prod.bin = "recyclable";
-            widget.prod.fairtrade = "Non issu du commerce équitable";
-            widget.prod.score = 6;
-            widget.prod.pic =
-                "https://static.openfoodfacts.org/images/products/807/680/019/5057/front_fr.334.200.jpg";
-          });
+          print("Pressed BOUTON");
         },
         child: Icon(
           Icons.info_outline_rounded,

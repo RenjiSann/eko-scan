@@ -22,7 +22,7 @@ class _ScannerState extends State<Scanner> {
   // Hold the value of the scanned barcode once scanned
   String barcodeData = "None";
 
-  // To avoid pressing the button twice
+  // To avoid pressing the button twice and crash
   bool scanEnabled = true;
 
   // TODO : Make this beautifuL
@@ -57,8 +57,16 @@ class _ScannerState extends State<Scanner> {
       final scanRes = await FlutterBarcodeScanner.scanBarcode(
           "#ff0000", "Back", true, ScanMode.BARCODE);
 
+      if (!mounted) return;
+
+      setState(() {
+        this.barcodeData = scanRes;
+        scanEnabled = true;
+      });
+
       ProductResult result = await OpenFoodAPIClient.getProductRaw(
           scanRes, OpenFoodFactsLanguage.FRENCH);
+
       if (result.product.ecoscoreScore != null) {
         temp = result.product.ecoscoreScore.toInt();
       }
@@ -75,12 +83,6 @@ class _ScannerState extends State<Scanner> {
         return Text("Scan successful");
       }
 
-      if (!mounted) return;
-
-      setState(() {
-        this.barcodeData = scanRes;
-        scanEnabled = true;
-      });
       widget.callback(newProduct);
       Navigator.push(
           context,

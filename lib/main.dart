@@ -104,9 +104,7 @@ class _EkoScanState extends State<EkoScan> with TickerProviderStateMixin {
           Center(
               child: Expanded(child: Historic(this.prods, this.addProducts))),
           Center(child: Scanner(this.addProducts)),
-          Center(
-            child: Memo(),
-          )
+          Center(child: Memo())
         ],
       ),
       bottomNavigationBar: BottomAppBar(
