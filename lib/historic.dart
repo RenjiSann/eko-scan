@@ -36,7 +36,7 @@ class _HistoricState extends State<Historic> {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              FicheProduit(prod, widget.callback)))));
+                              FicheProduit("123456789", widget.callback)))));
         });
   }
 }
