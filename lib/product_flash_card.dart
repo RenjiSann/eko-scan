@@ -1,7 +1,5 @@
-import 'package:eko_scan/scanner.dart';
 import 'package:eko_scan/test_dorian.dart';
 import 'package:flutter/material.dart';
-import 'scanner.dart';
 import 'product.dart';
 
 class FicheProduit extends StatefulWidget {
