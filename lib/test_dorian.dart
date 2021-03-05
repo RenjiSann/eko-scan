@@ -64,30 +64,10 @@ class _ScannerState extends State<Scanner> {
         scanEnabled = true;
       });
 
-      ProductResult result = await OpenFoodAPIClient.getProductRaw(
-          scanRes, OpenFoodFactsLanguage.FRENCH);
-
-      if (result.product.ecoscoreScore != null) {
-        temp = result.product.ecoscoreScore.toInt();
-      }
-      Produit newProduct = new Produit(
-          result.product.productNameFR,
-          result.product.brands,
-          "recyclable",
-          result.product.countries,
-          result.product.ingredients,
-          "Bah non",
-          result.product.imgSmallUrl,
-          temp);
-      if (result.status != 1) {
-        return Text("Scan successful");
-      }
-
-      widget.callback(newProduct);
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => FicheProduit(newProduct, widget.callback)));
+              builder: (context) => FicheProduit(scanRes, widget.callback)));
     } on PlatformException {
       this.barcodeData = "Error";
     }
