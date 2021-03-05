@@ -19,7 +19,7 @@ class FicheProduit extends StatefulWidget {
 class _FicheProduitState extends State<FicheProduit> {
   //To try with the API !!!
   //Product prod = Product(product, brand, bin, origin, packaging, fairtrade, pic, score)
-  int nb_likes = 0;
+  bool fail_barcode = false;
   Produit prod;
 
   Future<void> loadProduct() async {
@@ -37,6 +37,11 @@ class _FicheProduitState extends State<FicheProduit> {
             "Bah non",
             result.product.imgSmallUrl,
             5);
+        widget.callback(prod);
+      });
+    } else {
+      setState(() {
+        fail_barcode = true;
       });
     }
   }
@@ -44,19 +49,33 @@ class _FicheProduitState extends State<FicheProduit> {
   @override
   Widget build(BuildContext context) {
     if (prod == null) {
-      loadProduct();
-      return Scaffold(
-          body: Center(
-        child: Text("No match for the barcode"),
-      ));
+      if (!fail_barcode) {
+        loadProduct();
+        return Scaffold(
+            body: Center(
+          child: Text(
+            "Loading...",
+            style: Theme.of(context).textTheme.bodyText1,
+          ),
+        ));
+      } else {
+        return Scaffold(
+            body: Center(
+          child: Text(
+            "Unknown barcode :\n${widget._product_barcode}",
+            style: Theme.of(context).textTheme.bodyText1,
+          ),
+        ));
+      }
     } else {
       return Scaffold(
-        /*appBar: AppBar(
-        title: Text('Fiche produit'),
-        centerTitle: true,
-        backgroundColor: Colors.greenAccent[400],
-        //elevation: 0.0,
-      ),*/
+        appBar: AppBar(
+          title: Text("Product card",
+              style: Theme.of(context).textTheme.headline2),
+          centerTitle: true,
+          automaticallyImplyLeading: true,
+          iconTheme: Theme.of(context).accentIconTheme,
+        ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             print("Pressed BOUTON");
