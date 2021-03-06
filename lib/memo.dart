@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'themes.dart';
 
 void main() => runApp(MaterialApp(home: Memo()));
 
@@ -8,9 +9,10 @@ class Memo extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Memo de recyclage'),
+        title: Text('Memo de recyclage',
+        style: Theme.of(context).textTheme.headline2),
         centerTitle: true,
-        backgroundColor: Colors.greenAccent[400],
+        backgroundColor: EkoScanThemes.ekoGreen,
         //elevation: 0.0,
       ),
       body: SingleChildScrollView(
@@ -23,47 +25,47 @@ class Memo extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.autorenew_rounded,
-                        color: Colors.greenAccent[700],
+                        color: EkoScanThemes.ekoGreen,
                       ),
                       SizedBox(
                         width: 10.0,
                       ),
                       Expanded(
                         child: Text('À recycler :',
-                            maxLines: 3,
-                            style: Theme.of(context).textTheme.bodyText1),
-                      ),
-                      Text(
-                        'À recycler : ',
-                        style: TextStyle(
-                            fontSize: 20.0,
-                            color: Colors.blueGrey,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 2.0),
+                            style: Theme.of(context).textTheme.headline1),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 15.0,
+                    height: 20.0,
                   ),
-                  Text('-carton',
-                      style: TextStyle(
-                          fontSize: 15.0,
-                          color: Colors.blueGrey,
-                          letterSpacing: 1.0)),
+                  Text('- papiers : journaux, magazines...',
+                      style: Theme.of(context).textTheme.bodyText1
+                  ),
                   SizedBox(
-                    height: 5.0,
+                    height: 20.0,
                   ),
-                  Text('-bouteille en plastique',
-                      style: TextStyle(
-                          fontSize: 15.0,
-                          color: Colors.blueGrey,
-                          letterSpacing: 1.0)),
-                  Text('...',
-                      style: TextStyle(
-                          fontSize: 15.0,
-                          color: Colors.blueGrey,
-                          letterSpacing: 1.0)),
+                  Text('- emballages en cartonette (petit carton)',
+                      style: Theme.of(context).textTheme.bodyText1
+                  ),
+                  SizedBox(
+                     height: 20.0,
+                  ),
+                  Text('- bouteilles et flacons en plastique : de produits d\'entretien, de salle de bain, de boisson, de sauce',
+                      style: Theme.of(context).textTheme.bodyText1
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text('- boîtes métalliques : conserves, aérosols, de boisson, aluminium...',
+                      style: Theme.of(context).textTheme.bodyText1
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text('- briques : de boissons, soupe.',
+                      style: Theme.of(context).textTheme.bodyText1
+                  ),
                   Divider(
                     height: 30.0,
                     color: Colors.grey,
@@ -78,22 +80,60 @@ class Memo extends StatelessWidget {
                       SizedBox(
                         width: 10.0,
                       ),
-                      Text('À jeter',
-                          style: TextStyle(
-                              color: Colors.blueGrey,
-                              fontSize: 20.0,
-                              letterSpacing: 2.0,
-                              fontWeight: FontWeight.bold)),
+                      Expanded(
+                        child: Text('À jeter :',
+                            style: Theme.of(context).textTheme.headline1),
+                      ),
                     ],
                   ),
                   SizedBox(
                     height: 20.0,
                   ),
-                  Text('-bouteille en plastique',
-                      style: TextStyle(
-                          fontSize: 15.0,
-                          color: Colors.blueGrey,
-                          letterSpacing: 1.0)),
+                  Text('- films et sacs plastiques',
+                      style: Theme.of(context).textTheme.bodyText1
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text('- boîtes de viennoiseries, gâteaux',
+                      style: Theme.of(context).textTheme.bodyText1
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text('- barquettes en polystyrène, de beurre, bacs de glace',
+                      style: Theme.of(context).textTheme.bodyText1
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text('- barquettes de salade, plats préparés',
+                      style: Theme.of(context).textTheme.bodyText1
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text('- barquettes contenant des restes',
+                      style: Theme.of(context).textTheme.bodyText1
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text('- épluchures de légumes, fruits (à composter sinon)',
+                      style: Theme.of(context).textTheme.bodyText1
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text('- pots de produits laitiers : yaourt, crème...',
+                      style: Theme.of(context).textTheme.bodyText1
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text('- articles d\'hygiène',
+                      style: Theme.of(context).textTheme.bodyText1
+                  ),
                   Divider(
                     height: 30.0,
                     color: Colors.grey,
