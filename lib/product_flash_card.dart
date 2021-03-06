@@ -1,16 +1,15 @@
-import 'package:eko_scan/test_dorian.dart';
 import 'package:flutter/material.dart';
 import 'product.dart';
 import 'package:openfoodfacts/model/ProductResult.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
 
 class FicheProduit extends StatefulWidget {
-  final String _product_barcode;
+  final String _productBarcode;
   //Produit prod;
   final Function(Produit) callback;
 
   //FicheProduit(this.prod, this.callback);
-  FicheProduit(this._product_barcode, this.callback);
+  FicheProduit(this._productBarcode, this.callback);
 
   @override
   _FicheProduitState createState() => _FicheProduitState();
@@ -24,7 +23,7 @@ class _FicheProduitState extends State<FicheProduit> {
 
   Future<void> loadProduct() async {
     ProductResult result = await OpenFoodAPIClient.getProductRaw(
-        widget._product_barcode, OpenFoodFactsLanguage.FRENCH);
+        widget._productBarcode, OpenFoodFactsLanguage.FRENCH);
 
     if (result.product != null) {
       setState(() {
@@ -54,7 +53,7 @@ class _FicheProduitState extends State<FicheProduit> {
         return Scaffold(
             body: Center(
           child: Text(
-            "Unknown barcode :\n${widget._product_barcode}",
+            "Unknown barcode :\n${widget._productBarcode}",
             style: Theme.of(context).textTheme.bodyText1,
           ),
         ));

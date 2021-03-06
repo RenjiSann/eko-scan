@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:openfoodfacts/model/Ingredient.dart';
 import 'package:openfoodfacts/model/ProductResult.dart';
+import 'package:openfoodfacts/openfoodfacts.dart';
 
 class Produit {
   //Characteristics of each product
@@ -10,7 +10,7 @@ class Produit {
   //String bin;
   String origin;
   //List<Ingredient> packaging;
-  List<String> packaging;
+  String packaging;
   //String fairtrade;
   String picUrl;
   NetworkImage picture;
@@ -26,6 +26,16 @@ class Produit {
     this.picture = NetworkImage(this.picUrl);
     this.packaging = prodRes.product.packagingQuantity;
     this.score = prodRes.product.ecoscoreScore;
+  }
+
+  static Future<Produit> getFromBarcode(String barcode) async {
+    ProductResult result = await OpenFoodAPIClient.getProductRaw(
+        barcode, OpenFoodFactsLanguage.FRENCH);
+
+    if (result.product != null) {
+      return Produit.fromProductResult(result);
+    }
+    return null;
   }
 
   /*Produit(
