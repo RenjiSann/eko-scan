@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'product.dart';
+import 'themes.dart';
 import 'package:openfoodfacts/model/ProductResult.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
 
@@ -106,17 +107,13 @@ class _FicheProduitState extends State<FicheProduit> {
                     Row(children: <Widget>[
                       Icon(
                         Icons.eco_outlined,
-                        color: Colors.greenAccent[700],
+                        color: EkoScanThemes.ekoGreen,
                       ),
                       SizedBox(width: 10.0),
                       Text(
                         'EKO-SCORE : ${prod.score}/100',
                         maxLines: 3,
-                        style: TextStyle(
-                            color: Colors.greenAccent[700],
-                            letterSpacing: 2.0,
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.w500),
+                        style: Theme.of(context).textTheme.headline3
                       ),
                     ]),
                     SizedBox(height: 10.0),
@@ -124,17 +121,15 @@ class _FicheProduitState extends State<FicheProduit> {
                       children: <Widget>[
                         Icon(
                           Icons.autorenew_rounded,
-                          color: Colors.greenAccent[700],
+                          color: EkoScanThemes.ekoGreen,
                         ),
                         SizedBox(
                           width: 10.0,
                         ),
                         Text('${prod.name}+10',
                             maxLines: 3,
-                            style: TextStyle(
-                              color: Colors.greenAccent[700],
-                              letterSpacing: 2.0,
-                            )),
+                            style: Theme.of(context).textTheme.bodyText2
+                            ),
                       ],
                     ),
                     SizedBox(
