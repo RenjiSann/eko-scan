@@ -28,6 +28,11 @@ class Memo extends StatelessWidget {
                       SizedBox(
                         width: 10.0,
                       ),
+                      Expanded(
+                        child: Text('À recycler :',
+                            maxLines: 3,
+                            style: Theme.of(context).textTheme.bodyText1),
+                      ),
                       Text(
                         'À recycler : ',
                         style: TextStyle(

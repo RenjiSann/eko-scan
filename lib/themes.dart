@@ -17,6 +17,11 @@ class EkoScanThemes {
             color: Colors.blueGrey,
             letterSpacing: 2.0,
             fontWeight: FontWeight.normal),
+        bodyText2: TextStyle(
+          color: ekoGreen,
+          letterSpacing: 2.0,
+          fontWeight: FontWeight.normal
+        ),
         headline1: TextStyle(
             color: ekoDarkGrey,
             letterSpacing: 2.0,
@@ -27,6 +32,12 @@ class EkoScanThemes {
             letterSpacing: 2.0,
             fontSize: 20.0,
             fontWeight: FontWeight.bold),
+        headline3: TextStyle(
+          color: ekoGreen,
+            letterSpacing: 2.0,
+            fontSize: 15.0,
+            fontWeight: FontWeight.w500
+        ),
         button: TextStyle(color: Colors.white)),
   );
   static final ThemeData darkTheme = ThemeData(
@@ -40,6 +51,11 @@ class EkoScanThemes {
             color: Colors.white,
             letterSpacing: 2.0,
             fontWeight: FontWeight.normal),
+        bodyText2: TextStyle(
+            color: ekoGreen,
+            letterSpacing: 2.0,
+            fontWeight: FontWeight.normal
+        ),
         headline1: TextStyle(
             color: Colors.white,
             letterSpacing: 2.0,
@@ -50,6 +66,12 @@ class EkoScanThemes {
             letterSpacing: 2.0,
             fontSize: 20.0,
             fontWeight: FontWeight.bold),
+        headline3: TextStyle(
+            color: ekoGreen,
+            letterSpacing: 2.0,
+            fontSize: 15.0,
+            fontWeight: FontWeight.w500
+        ),
         button: TextStyle(color: Colors.black)),
   );
 }
