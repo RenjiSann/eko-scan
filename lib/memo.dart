@@ -7,10 +7,9 @@ class Memo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('Memo de recyclage',
-        style: Theme.of(context).textTheme.headline2),
+            style: Theme.of(context).textTheme.headline2),
         centerTitle: true,
         backgroundColor: EkoScanThemes.ekoGreen,
         //elevation: 0.0,
@@ -40,32 +39,29 @@ class Memo extends StatelessWidget {
                     height: 20.0,
                   ),
                   Text('- papiers : journaux, magazines...',
-                      style: Theme.of(context).textTheme.bodyText1
-                  ),
+                      style: Theme.of(context).textTheme.bodyText1),
                   SizedBox(
                     height: 20.0,
                   ),
                   Text('- emballages en cartonette (petit carton)',
-                      style: Theme.of(context).textTheme.bodyText1
-                  ),
-                  SizedBox(
-                     height: 20.0,
-                  ),
-                  Text('- bouteilles et flacons en plastique : de produits d\'entretien, de salle de bain, de boisson, de sauce',
-                      style: Theme.of(context).textTheme.bodyText1
-                  ),
+                      style: Theme.of(context).textTheme.bodyText1),
                   SizedBox(
                     height: 20.0,
                   ),
-                  Text('- boîtes métalliques : conserves, aérosols, de boisson, aluminium...',
-                      style: Theme.of(context).textTheme.bodyText1
+                  Text(
+                      '- bouteilles et flacons en plastique : de produits d\'entretien, de salle de bain, de boisson, de sauce',
+                      style: Theme.of(context).textTheme.bodyText1),
+                  SizedBox(
+                    height: 20.0,
                   ),
+                  Text(
+                      '- boîtes métalliques : conserves, aérosols, de boisson, aluminium...',
+                      style: Theme.of(context).textTheme.bodyText1),
                   SizedBox(
                     height: 20.0,
                   ),
                   Text('- briques : de boissons, soupe.',
-                      style: Theme.of(context).textTheme.bodyText1
-                  ),
+                      style: Theme.of(context).textTheme.bodyText1),
                   Divider(
                     height: 30.0,
                     color: Colors.grey,
@@ -90,50 +86,42 @@ class Memo extends StatelessWidget {
                     height: 20.0,
                   ),
                   Text('- films et sacs plastiques',
-                      style: Theme.of(context).textTheme.bodyText1
-                  ),
+                      style: Theme.of(context).textTheme.bodyText1),
                   SizedBox(
                     height: 20.0,
                   ),
                   Text('- boîtes de viennoiseries, gâteaux',
-                      style: Theme.of(context).textTheme.bodyText1
-                  ),
+                      style: Theme.of(context).textTheme.bodyText1),
                   SizedBox(
                     height: 20.0,
                   ),
                   Text('- barquettes en polystyrène, de beurre, bacs de glace',
-                      style: Theme.of(context).textTheme.bodyText1
-                  ),
+                      style: Theme.of(context).textTheme.bodyText1),
                   SizedBox(
                     height: 20.0,
                   ),
                   Text('- barquettes de salade, plats préparés',
-                      style: Theme.of(context).textTheme.bodyText1
-                  ),
+                      style: Theme.of(context).textTheme.bodyText1),
                   SizedBox(
                     height: 20.0,
                   ),
                   Text('- barquettes contenant des restes',
-                      style: Theme.of(context).textTheme.bodyText1
-                  ),
+                      style: Theme.of(context).textTheme.bodyText1),
                   SizedBox(
                     height: 20.0,
                   ),
                   Text('- épluchures de légumes, fruits (à composter sinon)',
-                      style: Theme.of(context).textTheme.bodyText1
-                  ),
+                      style: Theme.of(context).textTheme.bodyText1),
                   SizedBox(
                     height: 20.0,
                   ),
                   Text('- pots de produits laitiers : yaourt, crème...',
-                      style: Theme.of(context).textTheme.bodyText1
-                  ),
+                      style: Theme.of(context).textTheme.bodyText1),
                   SizedBox(
                     height: 20.0,
                   ),
                   Text('- articles d\'hygiène',
-                      style: Theme.of(context).textTheme.bodyText1
-                  ),
+                      style: Theme.of(context).textTheme.bodyText1),
                   Divider(
                     height: 30.0,
                     color: Colors.grey,
@@ -185,7 +173,8 @@ class Memo extends StatelessWidget {
                   SizedBox(
                     height: 20.0,
                   ),
-                  Text('Les jeter dans les points de collecte dans les supermarchés ou magasin d\'électroménager.',
+                  Text(
+                      'Les jeter dans les points de collecte dans les supermarchés ou magasin d\'électroménager.',
                       style: TextStyle(
                           color: Colors.blueGrey,
                           fontSize: 15.0,
@@ -204,16 +193,17 @@ class Memo extends StatelessWidget {
                       SizedBox(
                         width: 10.0,
                       ),
-                       Expanded(
-                      child: Text('Les piles',
-                          style: Theme.of(context).textTheme.headline1),
-                       ),
+                      Expanded(
+                        child: Text('Les piles',
+                            style: Theme.of(context).textTheme.headline1),
+                      ),
                     ],
                   ),
                   SizedBox(
                     height: 20.0,
                   ),
-                  Text('Les jeter dans les points de collecte dans les supermarchés ou magasins d\'électroménager.',
+                  Text(
+                      'Les jeter dans les points de collecte dans les supermarchés ou magasins d\'électroménager.',
                       style: TextStyle(
                           color: Colors.blueGrey,
                           fontSize: 15.0,

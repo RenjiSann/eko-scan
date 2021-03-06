@@ -110,11 +110,9 @@ class _FicheProduitState extends State<FicheProduit> {
                         color: EkoScanThemes.ekoGreen,
                       ),
                       SizedBox(width: 10.0),
-                      Text(
-                        'EKO-SCORE : ${prod.score}/100',
-                        maxLines: 3,
-                        style: Theme.of(context).textTheme.headline3
-                      ),
+                      Text('EKO-SCORE : ${prod.score}/100',
+                          maxLines: 3,
+                          style: Theme.of(context).textTheme.headline3),
                     ]),
                     SizedBox(height: 10.0),
                     Row(
@@ -128,8 +126,7 @@ class _FicheProduitState extends State<FicheProduit> {
                         ),
                         Text('${prod.name}+10',
                             maxLines: 3,
-                            style: Theme.of(context).textTheme.bodyText2
-                            ),
+                            style: Theme.of(context).textTheme.bodyText2),
                       ],
                     ),
                     SizedBox(

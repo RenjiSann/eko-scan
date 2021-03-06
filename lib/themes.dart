@@ -18,10 +18,7 @@ class EkoScanThemes {
             letterSpacing: 2.0,
             fontWeight: FontWeight.normal),
         bodyText2: TextStyle(
-          color: ekoGreen,
-          letterSpacing: 2.0,
-          fontWeight: FontWeight.normal
-        ),
+            color: ekoGreen, letterSpacing: 2.0, fontWeight: FontWeight.normal),
         headline1: TextStyle(
             color: ekoDarkGrey,
             letterSpacing: 2.0,
@@ -33,11 +30,10 @@ class EkoScanThemes {
             fontSize: 20.0,
             fontWeight: FontWeight.bold),
         headline3: TextStyle(
-          color: ekoGreen,
+            color: ekoGreen,
             letterSpacing: 2.0,
             fontSize: 15.0,
-            fontWeight: FontWeight.w500
-        ),
+            fontWeight: FontWeight.w500),
         button: TextStyle(color: Colors.white)),
   );
   static final ThemeData darkTheme = ThemeData(
@@ -45,24 +41,21 @@ class EkoScanThemes {
     accentColor: ekoDarkGreen,
     scaffoldBackgroundColor: Color.fromARGB(255, 32, 32, 32),
     iconTheme: IconThemeData(color: Colors.white),
-    accentIconTheme: IconThemeData(color: ekoDarkGrey),
+    accentIconTheme: IconThemeData(color: Colors.black),
     textTheme: TextTheme(
         bodyText1: TextStyle(
             color: Colors.white,
             letterSpacing: 2.0,
             fontWeight: FontWeight.normal),
         bodyText2: TextStyle(
-            color: ekoGreen,
-            letterSpacing: 2.0,
-            fontWeight: FontWeight.normal
-        ),
+            color: ekoGreen, letterSpacing: 2.0, fontWeight: FontWeight.normal),
         headline1: TextStyle(
             color: Colors.white,
             letterSpacing: 2.0,
             fontSize: 20.0,
             fontWeight: FontWeight.bold),
         headline2: TextStyle(
-            color: ekoDarkGrey,
+            color: Colors.black,
             letterSpacing: 2.0,
             fontSize: 20.0,
             fontWeight: FontWeight.bold),
@@ -70,8 +63,7 @@ class EkoScanThemes {
             color: ekoGreen,
             letterSpacing: 2.0,
             fontSize: 15.0,
-            fontWeight: FontWeight.w500
-        ),
+            fontWeight: FontWeight.w500),
         button: TextStyle(color: Colors.black)),
   );
 }
