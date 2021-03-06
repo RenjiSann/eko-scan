@@ -143,18 +143,14 @@ class Memo extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.brightness_1_outlined,
-                        color: Colors.black,
+                        color: Colors.brown[500],
                       ),
                       SizedBox(
                         width: 10.0,
                       ),
-                      Text(
-                        'Le verre',
-                        style: TextStyle(
-                            color: Colors.blueGrey,
-                            fontSize: 20.0,
-                            letterSpacing: 2.0,
-                            fontWeight: FontWeight.bold),
+                      Expanded(
+                        child: Text('Le verre',
+                            style: Theme.of(context).textTheme.headline1),
                       ),
                     ],
                   ),
@@ -175,23 +171,21 @@ class Memo extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.lightbulb_outline_rounded,
-                        color: Colors.black,
+                        color: Colors.yellow[800],
                       ),
                       SizedBox(
                         width: 10.0,
                       ),
-                      Text('Les ampoules',
-                          style: TextStyle(
-                              color: Colors.blueGrey,
-                              fontSize: 20.0,
-                              letterSpacing: 2.0,
-                              fontWeight: FontWeight.bold))
+                      Expanded(
+                        child: Text('Les ampoules',
+                            style: Theme.of(context).textTheme.headline1),
+                      ),
                     ],
                   ),
                   SizedBox(
                     height: 20.0,
                   ),
-                  Text('Les jeter dans les points de collecte.',
+                  Text('Les jeter dans les points de collecte dans les supermarchés ou magasin d\'électroménager.',
                       style: TextStyle(
                           color: Colors.blueGrey,
                           fontSize: 15.0,
@@ -205,25 +199,21 @@ class Memo extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.battery_charging_full_rounded,
-                        color: Colors.black,
+                        color: Colors.blue[800],
                       ),
                       SizedBox(
                         width: 10.0,
                       ),
-                      Text(
-                        'Les piles',
-                        style: TextStyle(
-                            color: Colors.blueGrey,
-                            fontSize: 20.0,
-                            letterSpacing: 2.0,
-                            fontWeight: FontWeight.bold),
-                      ),
+                       Expanded(
+                      child: Text('Les piles',
+                          style: Theme.of(context).textTheme.headline1),
+                       ),
                     ],
                   ),
                   SizedBox(
                     height: 20.0,
                   ),
-                  Text('Les jeter dans les points de collecte.',
+                  Text('Les jeter dans les points de collecte dans les supermarchés ou magasins d\'électroménager.',
                       style: TextStyle(
                           color: Colors.blueGrey,
                           fontSize: 15.0,
