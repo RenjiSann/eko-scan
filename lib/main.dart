@@ -1,12 +1,11 @@
-import 'package:eko_scan/product.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'historic.dart';
-import 'product_flash_card.dart';
+import 'history.dart';
 import 'memo.dart';
 import 'test_dorian.dart';
 import 'themes.dart';
+import 'history_widget.dart';
 
 void main() => runApp(Display());
 
@@ -21,12 +20,16 @@ class Display extends StatelessWidget {
         darkTheme: EkoScanThemes.darkTheme,
 
         // Widget to change to perform tests
-        home: EkoScan());
+        home: EkoScan(History()));
   }
 }
 
 class EkoScan extends StatefulWidget {
-  EkoScan({Key key}) : super(key: key);
+  final History history;
+
+  EkoScan(this.history) {
+    history.loadHistory();
+  }
 
   @override
   _EkoScanState createState() => _EkoScanState();
@@ -34,8 +37,6 @@ class EkoScan extends StatefulWidget {
 
 class _EkoScanState extends State<EkoScan> with TickerProviderStateMixin {
   TabController _tabController;
-
-  List<Produit> prods = [];
 
   @override
   void initState() {
@@ -48,13 +49,13 @@ class _EkoScanState extends State<EkoScan> with TickerProviderStateMixin {
     _tabController.dispose();
     super.dispose();
   }
-
+/*
   void addProducts(Produit produit) {
     this.setState(() {
       this.prods.insert(0, produit);
       if (this.prods.length == 20) this.prods.removeAt(this.prods.length - 1);
     });
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -62,9 +63,8 @@ class _EkoScanState extends State<EkoScan> with TickerProviderStateMixin {
       body: TabBarView(
         controller: _tabController,
         children: <Widget>[
-          Center(
-              child: Expanded(child: Historic(this.prods, this.addProducts))),
-          Center(child: Scanner(this.addProducts)),
+          Center(child: Expanded(child: HistoryWidget(widget.history))),
+          Center(child: Scanner(widget.history.addProduct)),
           Center(child: Memo())
         ],
       ),

@@ -1,18 +1,44 @@
-import 'package:openfoodfacts/model/Ingredient.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:openfoodfacts/model/ProductResult.dart';
+import 'package:openfoodfacts/openfoodfacts.dart';
 
 class Produit {
   //Characteristics of each product
-  String product;
+  String name;
   String brand;
-  String bin;
+  String barcode;
+  //String bin;
   String origin;
-  List<Ingredient> packaging;
-  String fairtrade;
-  String pic;
-  int score;
+  //List<Ingredient> packaging;
+  String packaging;
+  //String fairtrade;
+  String picUrl;
+  NetworkImage picture;
+  double score;
 
   //constructor
-  Produit(
+  Produit.fromProductResult(ProductResult prodRes) {
+    this.barcode = prodRes.barcode;
+    this.name = prodRes.product.productName;
+    this.brand = prodRes.product.brandsTags[0];
+    this.origin = prodRes.product.countriesTags[0];
+    this.picUrl = prodRes.product.imgSmallUrl;
+    this.picture = NetworkImage(this.picUrl);
+    this.packaging = prodRes.product.packagingQuantity;
+    this.score = prodRes.product.ecoscoreScore;
+  }
+
+  static Future<Produit> getFromBarcode(String barcode) async {
+    ProductResult result = await OpenFoodAPIClient.getProductRaw(
+        barcode, OpenFoodFactsLanguage.FRENCH);
+
+    if (result.product != null) {
+      return Produit.fromProductResult(result);
+    }
+    return null;
+  }
+
+  /*Produit(
     String product,
     String brand,
     String bin,
@@ -22,13 +48,15 @@ class Produit {
     String pic,
     int score,
   ) {
-    this.product = product;
+    this.name = product;
     this.brand = brand;
-    this.bin = bin;
-    this.packaging = packaging;
+    //this.bin = bin;
+    //this.packaging = packaging;
     this.origin = origin;
-    this.fairtrade = fairtrade;
-    this.pic = pic;
-    this.score = score;
+    //this.fairtrade = fairtrade;
+    this.picUrl = pic;
+    this.picture = NetworkImage(picUrl);
+    //this.score = score;
   }
+*/
 }
