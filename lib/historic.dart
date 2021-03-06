@@ -25,18 +25,34 @@ class _HistoricState extends State<Historic> {
                     children: <Widget>[
                       Center(
                         child: CircleAvatar(
-                          backgroundImage: NetworkImage(prod.pic),
+                          backgroundImage: prod.picture,
                           radius: 25.0,
                         ),
                       ),
-                      Expanded(child: Text(prod.product)),
+                      Expanded(child: Text(prod.name)),
                     ],
                   ),
                   onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              FicheProduit("123456789", widget.callback)))));
+                              FicheProduit(prod.barcode, widget.callback)))));
         });
+  }
+}
+
+class History {
+  // Product history
+  List<Produit> _products;
+
+  // Product queue max length
+  final int _limit = 100;
+
+  void addProduct(Produit prod) {
+    if (_products.isNotEmpty &&
+        _products[_products.length - 1].barcode == prod.barcode) return;
+
+    _products.add(prod);
+    if (_products.length > _limit) _products.removeAt(0);
   }
 }

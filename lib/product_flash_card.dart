@@ -19,29 +19,21 @@ class FicheProduit extends StatefulWidget {
 class _FicheProduitState extends State<FicheProduit> {
   //To try with the API !!!
   //Product prod = Product(product, brand, bin, origin, packaging, fairtrade, pic, score)
-  bool fail_barcode = false;
+  bool failBarcode = false;
   Produit prod;
 
   Future<void> loadProduct() async {
     ProductResult result = await OpenFoodAPIClient.getProductRaw(
         widget._product_barcode, OpenFoodFactsLanguage.FRENCH);
 
-    if (result != null) {
+    if (result.product != null) {
       setState(() {
-        prod = new Produit(
-            result.product.productNameFR,
-            result.product.brands,
-            "recyclable",
-            result.product.countries,
-            result.product.ingredients,
-            "Bah non",
-            result.product.imgSmallUrl,
-            5);
+        prod = Produit.fromProductResult(result);
         widget.callback(prod);
       });
     } else {
       setState(() {
-        fail_barcode = true;
+        failBarcode = true;
       });
     }
   }
@@ -49,7 +41,7 @@ class _FicheProduitState extends State<FicheProduit> {
   @override
   Widget build(BuildContext context) {
     if (prod == null) {
-      if (!fail_barcode) {
+      if (!failBarcode) {
         loadProduct();
         return Scaffold(
             body: Center(
@@ -94,7 +86,7 @@ class _FicheProduitState extends State<FicheProduit> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Center(
-                      child: Text('${prod.product}',
+                      child: Text('${prod.name}',
                           maxLines: 3,
                           style: Theme.of(context).textTheme.headline1),
                     ),
@@ -103,7 +95,7 @@ class _FicheProduitState extends State<FicheProduit> {
                     ),
                     Center(
                       child: CircleAvatar(
-                        backgroundImage: NetworkImage(prod.pic),
+                        backgroundImage: prod.picture,
                         radius: 60.0,
                       ),
                     ),
@@ -138,7 +130,7 @@ class _FicheProduitState extends State<FicheProduit> {
                         SizedBox(
                           width: 10.0,
                         ),
-                        Text('${prod.bin}',
+                        Text('${prod.name}+10',
                             maxLines: 3,
                             style: TextStyle(
                               color: Colors.greenAccent[700],
@@ -193,7 +185,7 @@ class _FicheProduitState extends State<FicheProduit> {
                       ),
                       SizedBox(width: 10.0),
                       Expanded(
-                        child: Text('${prod.fairtrade}',
+                        child: Text('+fairtrade',
                             maxLines: 3,
                             style: Theme.of(context).textTheme.bodyText1),
                       )
